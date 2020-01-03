@@ -24,7 +24,8 @@ def calculate(Z,elevation):
 elevation[0,0] , elevation[1,0] , elevation[2,0] = 120 , 100 , 80
 elevation[0,1] , elevation[1,1] , elevation[2,1] = 1000 , 4000 , 2000
 elevation[0,2] , elevation[1,2] , elevation[2,2] = 0.3, 0.5 , 0.4
-Z=80
+index_z = np.argmin(elevation[:,0])
+Z=elevation[index_z,0]
 while(True):
     for i in range(elevation.shape[0]):
         elevation[i,3:6] = calculate(Z,elevation[i,0:3])
